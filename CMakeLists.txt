@@ -12,6 +12,14 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
         "Use a separate build directory, e.g. 'cmake -S . -B build/debug'.")
 endif()
 
+# The project only supports 64-bit targets. Fail early with a clear message
+# if the build environment is x86 (e.g. wrong Developer Prompt).
+if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+    message(FATAL_ERROR
+        "A 64-bit (x64) toolchain is required. Run from an x64 developer "
+        "prompt (vcvars64.bat) or select an x64 configuration in Visual Studio.")
+endif()
+
 # Single-config generators (Ninja) need an explicit build type.
 get_property(is_multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
 if(NOT is_multi_config AND NOT CMAKE_BUILD_TYPE)

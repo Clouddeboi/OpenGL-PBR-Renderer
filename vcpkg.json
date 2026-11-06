@@ -1,0 +1,7 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "opengl-pbr-renderer",
+  "version": "0.1.0",
+  "builtin-baseline": "958ea5441f5213c928d52b44ee239fadef677304",
+  "dependencies": []
+}
