@@ -1,0 +1,25 @@
+# Normalise all text files to LF in the repository and working tree.
+* text=auto eol=lf
+
+# Windows-native formats that expect CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.sln text eol=crlf
+
+# Binary assets: never convert line endings or attempt text diffs.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.bmp  binary
+*.tga  binary
+*.hdr  binary
+*.exr  binary
+*.dds  binary
+*.ktx2 binary
+*.glb  binary
+*.bin  binary
+*.rdc  binary
+*.ttf  binary
+*.otf  binary
+*.zip  binary
+*.7z   binary
