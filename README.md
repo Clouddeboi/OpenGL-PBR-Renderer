@@ -29,7 +29,7 @@ Nothing below is implemented yet.
 
 C++20, OpenGL 4.6 Core, GLFW, GLAD, GLM, Dear ImGui, Assimp, stb_image, Catch2, CMake, vcpkg, RenderDoc, Tracy.
 
-Currently in use: CMake, vcpkg and MSVC. The rest are added as the commits that need them land.
+Currently in use: CMake, vcpkg, MSVC, GLFW and GLAD. The rest are added as the commits that need them land.
 
 ## Building
 

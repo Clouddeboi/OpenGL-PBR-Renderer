@@ -75,6 +75,8 @@ Pointer size = 64 bits
 Configuration: Debug
 ```
 
+The first configure downloads and compiles the dependencies through vcpkg. It needs an internet connection and can take several minutes. Later configures reuse vcpkg's binary cache and are fast.
+
 For a Release build, use the `windows-release` preset. The output goes to `build\windows-release`.
 
 ## 6. Visual Studio
@@ -97,6 +99,7 @@ If the configuration looks stale, use **Project → Delete Cache and Reconfigure
 | PowerShell: *running scripts is disabled* | Use `cmd` and `vcvars64.bat`, or run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` first. |
 | vcpkg baseline or git errors | `VCPKG_ROOT` probably points to Visual Studio's bundled vcpkg, or your clone is shallow. Use a full clone, and set `VCPKG_ROOT` explicitly. |
 | Red squiggles on `std::format` or `static_assert` | The file was opened outside a CMake folder. See section 6. |
+| vcpkg fails while building a package | Check your internet connection, then read the log file path that vcpkg prints (under `buildtrees/<package>/`). |
 
 ## Dependency versions
 

@@ -9,6 +9,7 @@ function(enable_project_warnings target)
             /permissive-        # strict standards conformance
             /Zc:__cplusplus     # make __cplusplus report the real standard
             /utf-8              # UTF-8 source and execution charset
+            /external:W0        # no warnings from external (SYSTEM) headers
             /w14263             # member function does not override base virtual
             /w14265             # class has virtual functions but non-virtual destructor
             /w14287             # unsigned/negative constant mismatch

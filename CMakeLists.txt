@@ -40,7 +40,16 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 include(CompilerWarnings)
 
+find_package(glfw3 CONFIG REQUIRED)
+find_package(glad CONFIG REQUIRED)
+
 add_executable(pbr_renderer
     src/app/main.cpp
 )
+enable_project_warnings(pbr_renderer)
+
+# GLAD is the only source of OpenGL declarations; stop GLFW including its own.
+target_compile_definitions(pbr_renderer PRIVATE GLFW_INCLUDE_NONE)
+target_link_libraries(pbr_renderer PRIVATE glfw glad::glad)
+
 enable_project_warnings(pbr_renderer)
